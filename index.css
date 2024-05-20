@@ -1,0 +1,11 @@
+table {
+    border-width: 1px;
+    border-style: outset;
+    border-color: black;
+}
+
+td {
+    border-width: 1px;
+    border-style: outset;
+    border-color: black;
+}
