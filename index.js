@@ -1,14 +1,91 @@
-let x = Math.random() * 15;
-document.getElementById("coluna_1").innerHTML = x;
+numeros = []
+numeros[0] = 0
+repetiu = false
 
-let y = Math.floor ((Math.random() * 30) + 15);
-document.getElementById("coluna_2").innerHTML = y;
+var b;
+var i;
+var n;
+var g;
+var o;
 
-let z = Math.floor ((Math.random() * 45) + 30);
-document.getElementById("coluna_3").innerHTML = z;
-
-let a = Math.floor ((Math.random() * 60) + 45);
-document.getElementById("coluna_4").innerHTML = a;
-
-let b = Math.floor ((Math.random() * 75) + 60);
-document.getElementById("coluna_5").innerHTML = b;
+for (let p = 0; p < 5; p++) {
+    do {
+        b = Math.floor ((Math.random() * 16) + 0);
+        for (let i = 0; i < numeros.length; i++) {
+            if (b == numeros[i]) {
+                repetiu = true
+                break
+            }
+            else {
+                repetiu = false
+            }
+        }
+    } while (repetiu);
+    numeros.push(b)
+    document.getElementsByClassName("coluna_1")[p].innerHTML = b;
+    
+    do {
+        i = Math.floor ((Math.random() * 16) + 16);
+        for (let j = 0; j < numeros.length; j++) {
+            if (i == numeros[j]) {
+                repetiu = true
+                break
+            }
+            else {
+                repetiu = false
+            }
+        }
+    } while (repetiu);
+    numeros.push(i)
+    document.getElementsByClassName("coluna_2")[p].innerHTML = i;
+    
+    if(p != 2 && document.getElementsByClassName("coluna_3")[p].innerHTML != 'X')
+    {
+        do {
+            n = Math.floor ((Math.random() * 16) + 31);
+            for (let i = 0; i < numeros.length; i++) {
+                if (n == numeros[i]) {
+                    repetiu = true
+                    break
+                }
+                else {
+                    repetiu = false
+                }
+            }
+        } while (repetiu);
+        numeros.push(n)
+        document.getElementsByClassName("coluna_3")[p].innerHTML = n;
+    }
+    
+    do {
+        g = Math.floor ((Math.random() * 16) + 46);
+        for (let j = 0; j < numeros.length; j++) {
+            if (g == numeros[j]) {
+                repetiu = true
+                break
+            }
+            else {
+                repetiu = false
+            }
+        }
+    } while (repetiu);
+    numeros.push(g)
+    document.getElementsByClassName("coluna_4")[p].innerHTML = g;
+    
+    
+    do {
+        o = Math.floor ((Math.random() * 16) + 61);
+        for (let i = 0; i < numeros.length; i++) {
+            if (o == numeros[i]) {
+                repetiu = true
+                break
+            }
+            else {
+                repetiu = false
+            }
+        }
+    } while (repetiu);
+    numeros.push(o)
+    document.getElementsByClassName("coluna_5")[p].innerHTML = o;
+    
+}
